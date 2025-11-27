@@ -613,7 +613,7 @@ def save_titles_to_file(results: Dict, id_to_name: Dict, failed_ids: List) -> st
                 rank = ranks[0] if ranks else 1
                 sorted_titles.append((rank, cleaned_title, url, mobile_url))
 
-            sorted_titles.sort(key=lambda x: -x[0])
+            sorted_titles.sort(key=lambda x: x[0])
 
             for rank, cleaned_title, url, mobile_url in sorted_titles:
                 line = f"{rank}. {cleaned_title}"
@@ -1387,6 +1387,7 @@ def count_word_frequency(
         if group_max_count > 0:
             sorted_titles = sorted_titles[:group_max_count]
 
+        sorted_titles = sorted_titles.reverse()
         stats.append(
             {
                 "word": group_key,
