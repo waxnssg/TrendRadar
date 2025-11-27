@@ -1387,7 +1387,7 @@ def count_word_frequency(
         if group_max_count > 0:
             sorted_titles = sorted_titles[:group_max_count]
 
-        sorted_titles = sorted_titles.reverse()
+        sorted_titles.reverse()
         stats.append(
             {
                 "word": group_key,
